@@ -5,6 +5,6 @@ class LoginForm(forms.Form):
 	password = forms.CharField(label='Password', max_length=80)
 
 class RegisterFrom(forms.Form):
-	name = models.CharField('User name', max_length=80)
-	email = models.EmailField('Email')
-	password = models.CharField('Password', max_length=80)
+	name = forms.CharField(label='User name', max_length=80)
+	email = forms.EmailField(label='Email')
+	password = forms.CharField(label='Password', max_length=80)

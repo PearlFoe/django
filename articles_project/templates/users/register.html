@@ -1,17 +1,17 @@
 {% block content %}
-	<div class="login-form">
-		<h1 class="form-header">Log in</h1>
+	<div class="register-form">
+		<h1 class="form-header">Register</h1>
 		{% if message %}
 			<p class="message">{{ message }}</p>
 		{% endif %}
-		<form action="/users/login/" method="post">
+		<form action="/users/registration/" method="post">
 			{% csrf_token %}
 			{{ form }}
 			<input type="submit" value="Submit">
 		</form>
-		<div class="registartion-advice">
+		<div class="login-advice">
 			<p>Don't have an account?</p>
-			<a href="/users/registration/"></a>
+			<a href="/users/login/"></a>
 		</div>
 	</div>
 {% endblock %}
