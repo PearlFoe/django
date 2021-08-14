@@ -26,6 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure--vji9ayd&d2=qbb1c&8+pe02_%x42^7%a@&$l+ez78n5f&e^5p'
+#SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -44,6 +45,11 @@ INSTALLED_APPS = [
 	'django.contrib.staticfiles',
 
 	'users',
+	'user_auth',
+	'articles',
+	'start_page',
+
+	'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +65,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'articles_project.urls'
 
 TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
 	{
@@ -131,10 +139,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-	os.path.join(BASE_DIR, "static")
+	os.path.join(BASE_DIR, "static"),
 ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+#LOGIN_REDIRECT_URL = 'users/<int:user_id>'

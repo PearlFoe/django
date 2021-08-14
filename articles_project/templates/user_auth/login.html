@@ -1,0 +1,23 @@
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block styles %}
+	<link rel="stylesheet"
+		href="{% static 'user_auth/login.css' %}">
+{% endblock %}
+
+{% block content %}
+	<div class="login-form">
+		<h1 class="form-header">Log in</h1>
+		<form action="{% url 'login_page' %}" method="post">
+			{% csrf_token %}
+			{{ form|crispy }}
+			<input type="submit" value="Submit">
+		</form>
+		<div class="registartion-advice">
+			<p>Don't have an account?</p>
+			<a href="{% url 'registration_page' %}">Sign up</a>
+		</div>
+	</div>
+{% endblock %}
