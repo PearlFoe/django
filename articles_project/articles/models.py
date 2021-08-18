@@ -11,6 +11,10 @@ class Article(models.Model):
 
 	class Meta:
 		db_table = 'articles'
+		ordering = ['-creation_date']
 
 	def __str__(self):
 		return self.title
+
+	def get_url(self):
+		return f'articles/{self.id}'

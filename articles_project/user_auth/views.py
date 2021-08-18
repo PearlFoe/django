@@ -21,7 +21,7 @@ def login_view(request):
 
 def logout_view(request):
 	logout(request)
-	return redirect('index')
+	return redirect('index_page')
 
 def register_view(request):
 	if request.method == 'POST':
