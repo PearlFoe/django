@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 	'start_page',
 
 	'crispy_forms',
+	'mathfilters',
 ]
 
 MIDDLEWARE = [
